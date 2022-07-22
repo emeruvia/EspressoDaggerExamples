@@ -4,6 +4,7 @@ import android.app.Application
 import com.codingwithmitch.espressodaggerexamples.api.FakeApiService
 import com.codingwithmitch.espressodaggerexamples.fragments.MainNavHostFragment
 import com.codingwithmitch.espressodaggerexamples.repository.FakeMainRepositoryImpl
+import com.codingwithmitch.espressodaggerexamples.ui.DetailsFragmentTest
 import com.codingwithmitch.espressodaggerexamples.ui.MainActivity
 import dagger.BindsInstance
 import dagger.Component
@@ -35,6 +36,8 @@ interface TestAppComponent: AppComponent {
 
         fun build(): TestAppComponent
     }
+
+    fun inject(detailsFragmentTest: DetailsFragmentTest)
 
 }
 

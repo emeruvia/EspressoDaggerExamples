@@ -9,8 +9,6 @@ import kotlinx.coroutines.InternalCoroutinesApi
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@ExperimentalCoroutinesApi
-@InternalCoroutinesApi
 @Singleton
 class FakeMainFragmentFactory
 @Inject
@@ -22,6 +20,7 @@ constructor(
     // used for setting a mock<UICommunicationListener>
     lateinit var uiCommunicationListener: UICommunicationListener
 
+    @UseExperimental(InternalCoroutinesApi::class, ExperimentalCoroutinesApi::class)
     override fun instantiate(classLoader: ClassLoader, className: String) =
 
         when (className) {
