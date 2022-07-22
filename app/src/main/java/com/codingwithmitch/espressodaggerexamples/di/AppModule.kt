@@ -10,7 +10,7 @@ import javax.inject.Singleton
 
 /* Alternative for Test: 'TestAppModule' */
 @Module
-object AppModule{
+object AppModule {
 
     @JvmStatic
     @Singleton
@@ -23,14 +23,4 @@ object AppModule{
         )
     }
 
-
-
 }
-
-
-
-
-
-
-
-
