@@ -5,8 +5,12 @@ import com.codingwithmitch.espressodaggerexamples.repository.FakeMainRepositoryI
 import com.codingwithmitch.espressodaggerexamples.viewmodels.FakeMainViewModelFactory
 import dagger.Module
 import dagger.Provides
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.InternalCoroutinesApi
 import javax.inject.Singleton
 
+@ExperimentalCoroutinesApi
+@InternalCoroutinesApi
 @Module
 object TestViewModelModule {
 
@@ -15,7 +19,7 @@ object TestViewModelModule {
     @Provides
     fun provideViewModelFactory(
         mainRepository: FakeMainRepositoryImpl
-    ): ViewModelProvider.Factory {
+    ): ViewModelProvider.Factory{
         return FakeMainViewModelFactory(
             mainRepository
         )

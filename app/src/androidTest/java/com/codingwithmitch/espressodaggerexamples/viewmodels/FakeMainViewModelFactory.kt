@@ -10,16 +10,21 @@ import java.lang.IllegalArgumentException
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Singleton
-class FakeMainViewModelFactory @Inject constructor(
-    private val mainRepositoryImpl: FakeMainRepositoryImpl
-) : ViewModelProvider.Factory {
 
-    @UseExperimental(InternalCoroutinesApi::class, ExperimentalCoroutinesApi::class)
+@ExperimentalCoroutinesApi
+@InternalCoroutinesApi
+class FakeMainViewModelFactory
+@Inject
+constructor(
+    private val mainRepository: FakeMainRepositoryImpl
+): ViewModelProvider.Factory {
+
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
-            return MainViewModel(mainRepositoryImpl) as T
+            return MainViewModel(mainRepository) as T
         }
-        throw IllegalArgumentException("Unnkown ViewModel class")
+        throw IllegalArgumentException("Unknown ViewModel class")
     }
+
+
 }

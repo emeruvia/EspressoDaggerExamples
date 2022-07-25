@@ -11,11 +11,9 @@ import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.platform.app.InstrumentationRegistry
 import com.codingwithmitch.espressodaggerexamples.R
 import com.codingwithmitch.espressodaggerexamples.TestBaseApplication
-import com.codingwithmitch.espressodaggerexamples.api.FakeApiService
 import com.codingwithmitch.espressodaggerexamples.di.TestAppComponent
 import com.codingwithmitch.espressodaggerexamples.fragments.FakeMainFragmentFactory
 import com.codingwithmitch.espressodaggerexamples.models.BlogPost
-import com.codingwithmitch.espressodaggerexamples.repository.FakeMainRepositoryImpl
 import com.codingwithmitch.espressodaggerexamples.ui.viewmodel.setSelectedBlogPost
 import com.codingwithmitch.espressodaggerexamples.util.Constants
 import com.codingwithmitch.espressodaggerexamples.util.FakeGlideRequestManager
@@ -27,7 +25,6 @@ import io.mockk.every
 import io.mockk.just
 import io.mockk.mockk
 import io.mockk.runs
-import junit.framework.Assert.assertEquals
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
 import org.junit.Before

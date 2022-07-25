@@ -9,6 +9,7 @@ import kotlinx.coroutines.InternalCoroutinesApi
 import javax.inject.Inject
 import javax.inject.Singleton
 
+@InternalCoroutinesApi
 @Singleton
 class FakeMainFragmentFactory
 @Inject
